@@ -16,7 +16,7 @@ Le processus de recrutement visait également à constituer une équipe capable 
 
 ---
 
-# 2. Méthodologie d’évaluation
+## 2. Méthodologie d'évaluation
 
 Les candidats ont été rencontrés et évalués selon plusieurs critères.
 
@@ -42,7 +42,7 @@ Priorité accordée au projet POPolitics par rapport à d’autres candidatures 
 
 ---
 
-# 3. Analyse des candidatures
+## 3. Analyse des candidatures
 
 ## Lazare
 
@@ -134,10 +134,10 @@ Profil particulièrement adapté au **développement frontend et à l’expérie
 
 ---
 
-# 4. Tableau comparatif des profils
+## 4. Tableau comparatif des profils
 
 | Candidat | Orientation | Technique | Travail équipe | Motivation projet | Particularités |
-|--------|--------|--------|--------|--------|--------|
+| -------- | -------- | -------- | -------- | -------- | -------- |
 | Lazare | DevOps / Infra | ++ | +++ | +++ | Profil polyvalent |
 | Samy | Front / UX | +++ | ++++ | +++ | Capacités transverses |
 | Arthur | Full Stack | ++++ | ++++ | ++++ | Profil très technique |
@@ -148,13 +148,13 @@ Profil particulièrement adapté au **développement frontend et à l’expérie
 
 ---
 
-# 5. Composition finale de l’équipe
+## 5. Composition finale de l'équipe
 
 Suite à l’analyse des candidatures, l’équipe suivante a été retenue.
 
 ## Direction technique
 
-**Tech Lead**
+### Tech Lead
 
 - Jaures
 
@@ -175,7 +175,7 @@ Suite à l’analyse des candidatures, l’équipe suivante a été retenue.
 
 ## Infrastructure
 
-**DevOps**
+### DevOps
 
 - Lazare
 
@@ -183,7 +183,7 @@ Suite à l’analyse des candidatures, l’équipe suivante a été retenue.
 
 ## Pilotage produit
 
-**Chef de projet / Product Owner**
+### Chef de projet / Product Owner
 
 - Samy
 
@@ -191,17 +191,17 @@ Suite à l’analyse des candidatures, l’équipe suivante a été retenue.
 
 ## Data
 
-**IA**
+### IA
 
 - Chloé
 
-**ETL / Data Engineering**
+### ETL / Data Engineering
 
 - Mehdi
 
 ---
 
-# 6. Justification des choix
+## 6. Justification des choix
 
 La composition finale de l’équipe repose sur plusieurs principes.
 
@@ -229,7 +229,7 @@ Les candidats sélectionnés ont démontré une motivation réelle pour s’inve
 
 ---
 
-# 7. Candidats non retenus
+## 7. Candidats non retenus
 
 Les candidats suivants n’ont pas été retenus dans la composition finale de l’équipe :
 
