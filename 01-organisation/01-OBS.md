@@ -8,7 +8,7 @@ Projet étudiant de Master 2 visant à concevoir une plateforme web POPolitics p
 
 ## 1. Pilotage & Produit
 
-**Responsable : Samy (Chef de projet / Product Owner)**
+### Responsable : Samy (Chef de projet / Product Owner)
 
 - **1.1 Gouvernance du projet**  
   - 1.1.1 Définition de la vision produit POPolitics  
@@ -27,7 +27,7 @@ Projet étudiant de Master 2 visant à concevoir une plateforme web POPolitics p
 
 ## 2. Backend & Architecture Applicative
 
-**Responsable : Arthur – Support technique / Tech Lead : Jaures**
+### Responsable : Arthur – Support technique / Tech Lead : Jaures
 
 - **2.1 Architecture backend**  
   - 2.1.1 Choix du framework (ex. Django / FastAPI)  
@@ -46,7 +46,7 @@ Projet étudiant de Master 2 visant à concevoir une plateforme web POPolitics p
 
 ## 3. Frontend & UX/UI
 
-**Responsables : Evilavy, Raphaël – Contribution UX/UI : Samy**
+### Responsables : Evilavy, Raphaël – Contribution UX/UI : Samy
 
 - **3.1 Architecture frontend**  
   - 3.1.1 Choix des technologies frontend (Next.js / React, HTML/CSS/JS)  
@@ -65,7 +65,7 @@ Projet étudiant de Master 2 visant à concevoir une plateforme web POPolitics p
 
 ## 4. Data Engineering & Data Science
 
-**Responsables : Mehdi (ETL / Data Engineering), Chloé (IA / Data Science)**
+### Responsables : Mehdi (ETL / Data Engineering), Chloé (IA / Data Science)
 
 - **4.1 Ingestion & préparation des données**  
   - 4.1.1 Conception des pipelines ETL depuis les sources (AN, Sénat, UE) vers la Landing Zone  
@@ -89,7 +89,7 @@ Projet étudiant de Master 2 visant à concevoir une plateforme web POPolitics p
 
 ## 5. Data Lake, Data Warehouse & Datamarts
 
-**Responsable principal : Mehdi (schémas & flux analytiques)**
+### Responsable principal : Mehdi (schémas & flux analytiques)
 
 - **5.1 Conception des couches de stockage**  
   - 5.1.1 Modélisation logique des données pour le data lake (Landing Zone BRONZE / SILVER / GOLD) et le data warehouse  
@@ -108,7 +108,7 @@ Projet étudiant de Master 2 visant à concevoir une plateforme web POPolitics p
 
 ## 6. DevOps, Intégration & Déploiement
 
-**Responsable : Lazare**
+### Responsable : Lazare
 
 - **6.1 Environnements & outils**  
   - 6.1.1 Définition des environnements (dev / démo / éventuellement prod)  
@@ -128,7 +128,7 @@ Projet étudiant de Master 2 visant à concevoir une plateforme web POPolitics p
 
 ## 7. Qualité, Tests & Sécurité
 
-**Responsabilité partagée – Coordination : Samy & Jaures**
+### Responsabilité partagée – Coordination : Samy & Jaures
 
 - **7.1 Stratégie de test**  
   - 7.1.1 Définition des types de tests (unitaires, intégration, tests manuels)  
@@ -147,7 +147,7 @@ Projet étudiant de Master 2 visant à concevoir une plateforme web POPolitics p
 
 ## 8. UX/UI & Communication Produit
 
-**Responsables : Samy, Evilavy, Raphaël**
+### Responsables : Samy, Evilavy, Raphaël
 
 - **8.1 Recherche utilisateur & cadrage UX**  
   - 8.1.1 Identification des profils d’utilisateurs cibles  
