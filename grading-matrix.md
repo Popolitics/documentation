@@ -54,7 +54,6 @@ Ce document relie les exigences du projet POPolitics aux documents de référenc
 - **proj_technos**  
   - [02-technologie/01-technological-choices.md](02-technologie/01-technological-choices.md)  
   - [02-technologie/02-moscow-popolitics.md](02-technologie/02-moscow-popolitics.md)  
-  - [02-technologie/Technical-architecture-Backend.pdf](02-technologie/Technical-architecture-Backend.pdf)  
   - [02-technologie/07-tech-stack-comparison.md](02-technologie/07-tech-stack-comparison.md)
 - **proj_resources**  
   - Document dédié aux ressources et coûts :  

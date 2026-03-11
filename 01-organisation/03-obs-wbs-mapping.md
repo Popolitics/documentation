@@ -27,16 +27,16 @@ L’objectif est de montrer **qui est responsable de quoi** pour chaque grande b
 
 <!-- markdownlint-disable MD060 -->
 
-| Lot WBS (niveau 1)                                   | Responsable principal (OBS) | Contributeurs clés (OBS)                                         |
-|------------------------------------------------------|-----------------------------|------------------------------------------------------------------|
-| 1. Pilotage & Produit                                | Samy (Chef de projet / PO) | Tous les leads techniques (Arthur, Mehdi, Chloé, Lazare, Front) |
-| 2. Plateforme Data & ETL                             | Mehdi                       | Chloé (IA), Lazare (DevOps)                                     |
-| 3. Datamarts & Analytique                            | Mehdi                       | Arthur (consommation via APIs), Chloé (besoins analytiques)     |
-| 4. Couche IA & Modèles                               | Chloé                       | Mehdi (données), Arthur (intégration via IA Service)            |
-| 5. Backend Django (Data / IA / Auth Services)        | Arthur                      | Jaures (support tech), Lazare (déploiement), Chloé (IA)         |
-| 6. Frontend Next.js (Portail & Page personnelle)     | Evilavy & Raphaël          | Samy (UX/UI), Arthur (contrats d’API)                           |
-| 7. DevOps & Orchestration (Kestra, déploiements)     | Lazare                      | Mehdi (workflows data), Arthur (services backend)               |
-| 8. Qualité, Tests & Sécurité                         | Samy & Jaures              | Tous les membres selon leur périmètre                           |
+| Lot WBS (niveau 1)                               | Responsable principal (OBS) | Contributeurs clés (OBS)                                         |
+|--------------------------------------------------|-----------------------------|------------------------------------------------------------------|
+| 1. Pilotage & Produit                            | Samy (Chef de projet / PO) | Tous les leads techniques (Arthur, Mehdi, Chloé, Lazare, Front) |
+| 2. Plateforme Data & ETL                         | Mehdi                       | Chloé (IA), Lazare (DevOps)                                     |
+| 3. Datamarts & Analytique                        | Mehdi                       | Arthur (consommation via APIs), Chloé (besoins analytiques)     |
+| 4. Couche IA & Modèles                           | Chloé                       | Mehdi (données), Arthur (intégration via IA Service)            |
+| 5. Backend Django (Data / IA / Auth Services)    | Arthur                      | Jaures (support tech), Lazare (déploiement), Chloé (IA)         |
+| 6. Frontend Next.js (Portail & Page personnelle) | Evilavy & Raphaël          | Samy (UX/UI), Arthur (contrats d’API)                           |
+| 7. DevOps & Orchestration (Kestra, déploiements) | Lazare                      | Mehdi (workflows data), Arthur (services backend)               |
+| 8. Qualité, Tests & Sécurité                     | Samy & Jaures              | Tous les membres selon leur périmètre                           |
 
 <!-- markdownlint-enable MD060 -->
 
