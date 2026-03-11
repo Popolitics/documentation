@@ -25,6 +25,8 @@ L’objectif est de montrer **qui est responsable de quoi** pour chaque grande b
 
 ## 2. Tableau de responsabilités (vue synthétique)
 
+<!-- markdownlint-disable MD060 -->
+
 | Lot WBS (niveau 1)                                   | Responsable principal (OBS) | Contributeurs clés (OBS)                                         |
 |------------------------------------------------------|-----------------------------|------------------------------------------------------------------|
 | 1. Pilotage & Produit                                | Samy (Chef de projet / PO) | Tous les leads techniques (Arthur, Mehdi, Chloé, Lazare, Front) |
@@ -35,6 +37,8 @@ L’objectif est de montrer **qui est responsable de quoi** pour chaque grande b
 | 6. Frontend Next.js (Portail & Page personnelle)     | Evilavy & Raphaël          | Samy (UX/UI), Arthur (contrats d’API)                           |
 | 7. DevOps & Orchestration (Kestra, déploiements)     | Lazare                      | Mehdi (workflows data), Arthur (services backend)               |
 | 8. Qualité, Tests & Sécurité                         | Samy & Jaures              | Tous les membres selon leur périmètre                           |
+
+<!-- markdownlint-enable MD060 -->
 
 ---
 

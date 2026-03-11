@@ -57,8 +57,8 @@ Ce document relie les exigences du projet POPolitics aux documents de référenc
   - [02-technologie/Technical-architecture-Backend.pdf](02-technologie/Technical-architecture-Backend.pdf)  
   - [02-technologie/07-tech-stack-comparison.md](02-technologie/07-tech-stack-comparison.md)
 - **proj_resources**  
-	- Document dédié aux ressources et coûts :  
-	  [02-technologie/08-projet-ressources.md](02-technologie/08-projet-ressources.md)
+  - Document dédié aux ressources et coûts :  
+    [02-technologie/08-projet-ressources.md](02-technologie/08-projet-ressources.md)
 
 ---
 
@@ -67,7 +67,7 @@ Ce document relie les exigences du projet POPolitics aux documents de référenc
 - **doc_diagram**  
   - WBS visuel : [02-technologie/WBS.pdf](02-technologie/WBS.pdf)  
   - OBS / organigramme : [01-organisation/01-OBS.md](01-organisation/01-OBS.md) et schémas dans  
-	[01-organisation/Organigramme.jpg](01-organisation/Organigramme.jpg)  
+    [01-organisation/Organigramme.jpg](01-organisation/Organigramme.jpg)  
   - Architecture technique globale : [02-technologie/Schema_architecture.jpg](02-technologie/Schema_architecture.jpg)
 - **doc_quality**  
   - Tous les documents Markdown et PDF de la documentation sont structurés et relus pour clarté.

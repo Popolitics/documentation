@@ -8,6 +8,8 @@ Ce document présente, de manière synthétique, les principales **options techn
 
 ### 1.1 Kestra vs Airflow
 
+<!-- markdownlint-disable MD060 -->
+
 | Option       | Avantages principaux                                                   | Limites / remarques                                      | Choix retenu |
 |-------------|-------------------------------------------------------------------------|----------------------------------------------------------|-------------|
 | **Kestra**  | Orienté data engineering, workflows déclaratifs en YAML, interface moderne, déploiement simple en Docker, bonne observabilité, **outil français** | Communauté plus jeune qu’Airflow, moins de documentation historique | **Oui** – bon compromis pédagogie / simplicité / modernité |
@@ -50,6 +52,8 @@ ce qui simplifie les échanges entre services et réduit les risques d’incompr
 |--------------------|---------------------------------------------------------------------|----------------------------------------------------|-------------|
 | **Next.js**        | SSR/SSG, très bonne intégration avec React, BFF intégré (Next Server), gestion des Server Actions, performance et SEO | Architecture un peu plus avancée à appréhender    | **Oui** – idéal pour un front web moderne consommant des APIs REST |
 | React SPA classique| Simplicité de mise en place, très répandu, courbe d’apprentissage déjà connue par beaucoup d’étudiants | Pas de SSR natif, SEO plus faible, logique sensible côté client | Non, moins adapté aux besoins de performance et de sécurité |
+
+<!-- markdownlint-enable MD060 -->
 
 **Conclusion :** Next.js est retenu pour bénéficier du **BFF** et du rendu côté serveur, ce qui améliore à la fois la performance perçue, la sécurité (logique côté serveur) et l’expérience utilisateur, en cohérence avec l’objectif de proposer une **interface web performante et sécurisée** détaillé dans 01-technological-choices.md.
 
