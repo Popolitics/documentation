@@ -15,7 +15,7 @@ We use a **prefix-based** naming system. All branch names should be lowercase, u
 | :--- | :--- | :--- |
 | `feat/` | New features or functionality | `feat/PROJ-123-user-authentication` |
 | `fix/` | Bug fixes | `fix/PROJ-456-header-mobile-overlap` |
-| `docs/` | Documentation changes only | `docs/PROJ-789-api-endpoints` |
+| `doc/` | Documentation changes only | `docs/PROJ-789-api-endpoints` |
 | `refactor/` | Code changes that neither fix a bug nor add a feature | `refactor/PROJ-101-clean-utils` |
 | `chore/` | Maintenance tasks (dependencies, build configs) | `chore/PROJ-202-update-node-version` |
 
@@ -43,7 +43,7 @@ We follow the **Conventional Commits** specification. This allows for automated 
 
 * `feat(auth): PROJ-123 add JWT validation logic`
 * `fix(ui): PROJ-456 resolve z-index issue on modal`
-* `docs: update installation steps in README`
+* `doc: update installation steps in README`
 
 ---
 
