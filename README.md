@@ -24,6 +24,8 @@ Popolitics permet à chaque citoyen de comprendre concrètement l’action de se
   - Definition of Done (05-definition-of-done.md)  
   - Comparaison des stacks techniques (07-tech-stack-comparison.md)  
   - Ressources matérielles & coûts (08-projet-ressources.md)  
+  - User Stories ([09-user-stories.md](02-technologie/09-user-stories.md))  
+  - Plan de Sprints ([10-sprint-plan.md](02-technologie/10-sprint-plan.md))  
   - Schéma d’architecture technique global (Schema_architecture.jpg)  
   - Autres schémas d’architecture technique (diagrammes)
 
