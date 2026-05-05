@@ -35,14 +35,19 @@ Ce document relie les exigences du projet POPolitics aux documents de référenc
 
 - **team_practices**  
   - [02-technologie/04-quality-plan.md](02-technologie/04-quality-plan.md)  
-  - [02-technologie/05-definition-of-done.md](02-technologie/05-definition-of-done.md)
+  - [02-technologie/05-definition-of-done.md](02-technologie/05-definition-of-done.md)  
+  - [02-technologie/15-testing-strategy.md](02-technologie/15-testing-strategy.md)  
+  - [02-technologie/12-non-functional-requirements.md](02-technologie/12-non-functional-requirements.md)  
+  - [02-technologie/14-security-rgpd.md](02-technologie/14-security-rgpd.md)  
+  - [02-technologie/16-ci-cd.md](02-technologie/16-ci-cd.md)
 
 ---
 
 ## 5. Project Management
 
 - **proj_methodology**  
-  - [01-organisation/02-project-methodology-management.md](01-organisation/02-project-methodology-management.md)
+  - [01-organisation/02-project-methodology-management.md](01-organisation/02-project-methodology-management.md)  
+  - [01-organisation/05-communication-plan.md](01-organisation/05-communication-plan.md)
 - **proj_planning**  
   - Outil de gestion de projet (Trello / Planner / GitHub Projects) référencé dans  
     [01-organisation/02-project-methodology-management.md](01-organisation/02-project-methodology-management.md)
@@ -54,7 +59,10 @@ Ce document relie les exigences du projet POPolitics aux documents de référenc
 - **proj_technos**  
   - [02-technologie/01-technological-choices.md](02-technologie/01-technological-choices.md)  
   - [02-technologie/02-moscow-popolitics.md](02-technologie/02-moscow-popolitics.md)  
-  - [02-technologie/07-tech-stack-comparison.md](02-technologie/07-tech-stack-comparison.md)
+  - [02-technologie/07-tech-stack-comparison.md](02-technologie/07-tech-stack-comparison.md)  
+  - [02-technologie/13-data-sources.md](02-technologie/13-data-sources.md)  
+  - [02-technologie/17-data-model.md](02-technologie/17-data-model.md)  
+  - [02-technologie/11-risk-register.md](02-technologie/11-risk-register.md)
 - **proj_resources**  
   - Document dédié aux ressources et coûts :  
     [02-technologie/08-projet-ressources.md](02-technologie/08-projet-ressources.md)
@@ -67,9 +75,12 @@ Ce document relie les exigences du projet POPolitics aux documents de référenc
   - WBS visuel : [02-technologie/WBS.pdf](02-technologie/WBS.pdf)  
   - OBS / organigramme : [01-organisation/01-OBS.md](01-organisation/01-OBS.md) et schémas dans  
     [01-organisation/Organigramme.jpg](01-organisation/Organigramme.jpg)  
-  - Architecture technique globale : [02-technologie/Schema_architecture.jpg](02-technologie/Schema_architecture.jpg)
+  - Architecture technique globale : [02-technologie/Schema_architecture.jpg](02-technologie/Schema_architecture.jpg)  
+  - Modèle de données : [02-technologie/17-data-model.md](02-technologie/17-data-model.md)
 - **doc_quality**  
   - Tous les documents Markdown et PDF de la documentation sont structurés et relus pour clarté.
+- **doc_glossaire**  
+  - [glossaire.md](glossaire.md)
 
 ---
 
