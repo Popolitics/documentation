@@ -47,7 +47,8 @@ Ce document relie les exigences du projet POPolitics aux documents de référenc
 
 - **proj_methodology**  
   - [01-organisation/02-project-methodology-management.md](01-organisation/02-project-methodology-management.md)  
-  - [01-organisation/05-communication-plan.md](01-organisation/05-communication-plan.md)
+  - [01-organisation/05-communication-interne.md](01-organisation/05-communication-interne.md)
+  - [03-marketing/02-plan-de-communication.md](03-marketing/02-plan-de-communication.md)
 - **proj_planning**  
   - Outil de gestion de projet (Trello / Planner / GitHub Projects) référencé dans  
     [01-organisation/02-project-methodology-management.md](01-organisation/02-project-methodology-management.md)
@@ -91,6 +92,7 @@ Ce document relie les exigences du projet POPolitics aux documents de référenc
     - [02-technologie/01-technological-choices.md](02-technologie/01-technological-choices.md)  
     - [02-technologie/02-moscow-popolitics.md](02-technologie/02-moscow-popolitics.md)  
     - [01-organisation/01-OBS.md](01-organisation/01-OBS.md)  
+    - [03-marketing/01-dossier-marketing.md](03-marketing/01-dossier-marketing.md)
     - [02-technologie/WBS.pdf](02-technologie/WBS.pdf)
 
 Ce tableau permet de retrouver rapidement les documents recherchés.

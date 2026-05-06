@@ -11,6 +11,7 @@ Popolitics permet à chaque citoyen de comprendre concrètement l’action de se
   - Dossier Recrutement et rapport de recrutement  
   - Team composition & Skills (profil et rôles de l’équipe)  
   - Méthodologie et gestion de projet (project-methodology-management.md)  
+  - Communication interne (05-communication-interne.md)
   - Mapping OBS ↔ WBS (obs-wbs-mapping.md)
   - Organigramme d’équipe (Organigramme.jpg)
 
@@ -28,6 +29,11 @@ Popolitics permet à chaque citoyen de comprendre concrètement l’action de se
   - Plan de Sprints ([10-sprint-plan.md](02-technologie/10-sprint-plan.md))  
   - Schéma d’architecture technique global (Schema_architecture.jpg)  
   - Autres schémas d’architecture technique (diagrammes)
+
+- **03-marketing/**
+  Regroupe les documents de positionnement, go-to-market et rayonnement du projet :
+  - Dossier marketing ([01-dossier-marketing.md](03-marketing/01-dossier-marketing.md))
+  - Plan de communication externe ([02-plan-de-communication.md](03-marketing/02-plan-de-communication.md))
 
 - **Grading matrix**  
   Le fichier [grading-matrix.md](grading-matrix.md) fait le lien entre les critères de notation et les documents livrés.
