@@ -29,6 +29,18 @@ La communication **interne** (équipe, Scrum, GitHub) est traitée dans [05-comm
 | **Citoyens engagés** | 25–45 ans, actifs politiquement, à l'aise avec le numérique | LinkedIn, X (Twitter), Instagram | « Enfin un outil simple pour comprendre qui vote quoi » |
 | **Journalistes / Data journalistes** | Presse indépendante, médias en ligne, blogueurs data | LinkedIn, X (Twitter), Mastodon | « Des données propres et croisées, prêtes à l'emploi » |
 | **Jury & école Epitech** | Encadrants pédagogiques, correcteurs | Présentation orale, rapport, démo live | « Projet rigoureux, technique maîtrisée, valeur civic-tech démontrée » |
+| **Autorités & associations pour la transparence publique** | Institutions et organisations œuvrant pour la transparence de la vie publique et le débat démocratique | Email ciblé, LinkedIn, événements civic-tech | « Un outil open source qui rend l'activité parlementaire lisible et vérifiable par tous » |
+
+**Exemples d'acteurs ciblés :**
+
+| Organisation | Type | Lien |
+| :--- | :--- | :--- |
+| [Haute Autorité pour la Transparence de la Vie Publique (HATVP)](https://www.hatvp.fr/) | Autorité administrative indépendante | Transparence des mandats et patrimoines des élus |
+| [Regards Citoyens](https://www.regardscitoyens.org/) | Association civic-tech | Données ouvertes sur le Parlement français |
+| [Démocratie Ouverte](https://www.democratieouverte.org/) | Association | Innovation démocratique et participation citoyenne |
+| [La Quadrature du Net](https://www.laquadrature.net/) | Association | Libertés numériques et transparence publique |
+| [Open Data](https://www.data.gouv.fr/) | Écosystème open data | Réutilisation des données publiques |
+| Commission d'accès aux documents administratifs (CADA) | Autorité administrative indépendante | Accès aux documents publics |
 
 ### 3.2 Cibles secondaires
 
