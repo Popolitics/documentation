@@ -45,7 +45,7 @@ Elle entend souvent parler d'un élu en particulier sur les sujets de santé et 
 
 | Habitude | Détail |
 | :--- | :--- |
-| **Appareils** | Smartphone (90 %), tablette occasionnellement |
+| **Appareils** | Smartphone (70 %), ordinateur (25 %), tablette occasionnellement |
 | **Réseaux** | Instagram, X (Twitter), podcasts |
 | **Sessions** | Courtes (5–10 min), souvent en transport ou pendant les pauses |
 | **Tolérance aux frictions** | Faible — abandonne si une page est trop lente ou confuse |
@@ -73,7 +73,7 @@ Elle entend souvent parler d'un élu en particulier sur les sujets de santé et 
 | **Profession** | Journaliste politique indépendant & blogueur data |
 | **Localisation** | Paris (75) |
 | **Situation** | Célibataire, très mobile |
-| **Niveau numérique** | Avancé — à l'aise avec Excel, Python basique, APIs publiques |
+| **Niveau numérique** | Intermédiaire-avancé — à l'aise avec Excel, Google Sheets, outils de visualisation en ligne |
 
 ### Biographie
 
@@ -91,17 +91,17 @@ Il passe plusieurs heures par semaine à extraire manuellement des données du s
 
 ### Frustrations
 
-- Les **APIs officielles** sont peu documentées, instables et hétérogènes entre institutions.
+- Les sites officiels (AN, Sénat, UE) sont **disparates et peu lisibles** : il faut naviguer entre plusieurs interfaces pour trouver les mêmes infos.
 - Le croisement manuel entre AN et Sénat sur un même élu est **extrêmement chronophage**.
 - Les outils existants sont soit trop généralistes, soit derrière des paywalls prohibitifs.
-- Les données de l'UE sont dans un format (RDF/JSON-LD) difficile à exploiter sans compétences techniques avancées.
+- Les données brutes disponibles sont dans des formats difficiles à exploiter sans bagage technique.
 
 ### Comportement numérique
 
 | Habitude | Détail |
 | :--- | :--- |
 | **Appareils** | Ordinateur (Mac, 95 %) |
-| **Outils** | Google Sheets, Datawrapper, Python/Pandas (basique), Flourish |
+| **Outils** | Google Sheets, Datawrapper, Flourish, Canva |
 | **Sessions** | Longues (1–3h), le matin ou tard le soir |
 | **Tolérance aux frictions** | Haute — accepte la complexité si les données sont fiables et riches |
 
