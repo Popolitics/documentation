@@ -19,11 +19,13 @@ Chaque story est accompagnée de :
 
 ## 2. Personas
 
-| Persona | Description |
-| :--- | :--- |
-| **Citoyen** | Utilisateur grand public souhaitant suivre l'activité politique de ses représentants. |
-| **Journaliste / Expert** | Utilisateur averti cherchant à analyser des données politiques en profondeur. |
-| **Administrateur** | Membre de l'équipe POPolitics gérant la plateforme et les données. |
+Les personas détaillés (profil fictif complet, objectifs, frustrations, scénarios d'usage) sont documentés dans [00-personas.md](00-personas.md).
+
+| Persona | Description | Profil fictif |
+| :--- | :--- | :--- |
+| **Citoyen** | Utilisateur grand public souhaitant suivre l'activité politique de ses représentants. | [Marie Fontaine](00-personas.md#persona-1--le-citoyen-engagé) |
+| **Journaliste / Expert** | Utilisateur averti cherchant à analyser des données politiques en profondeur. | [Thomas Marchand](00-personas.md#persona-2--le-journaliste--expert-politique) |
+| **Administrateur** | Membre de l'équipe POPolitics gérant la plateforme et les données. | [Lucas Perrin](00-personas.md#persona-3--ladministrateur-plateforme) |
 
 ---
 
