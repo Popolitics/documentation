@@ -44,7 +44,7 @@ Ce document décrit la stratégie de tests du projet POPolitics. Il complète le
   - Fonctions de validation et de transformation de données
   - Logique métier des services (Data Service, Auth Service, IA Service)
   - Serializers et permissions Django REST Framework
-- **Cible de couverture** : > 60 % sur les modules critiques (MVP)
+- **Cible de couverture** : > 80 % sur les modules critiques (MVP)
 
 #### Tests d'intégration
 
@@ -178,7 +178,7 @@ Un PR ne peut pas être mergé si l'un de ces steps échoue.
 
 | Critère | Cible |
 |---|---|
-| Couverture tests unitaires backend | > 60 % sur les modules critiques |
+| Couverture tests unitaires backend | > 80 % sur les modules critiques |
 | Couverture tests unitaires frontend | > 50 % sur les composants partagés |
 | Parcours E2E manuels validés | 100 % des parcours Must Have |
 | Zéro bug critique ouvert | Avant chaque démo |
