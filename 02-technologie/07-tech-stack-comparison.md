@@ -70,14 +70,14 @@ Cette section objective les choix ci‑dessus par des **chiffres**. Elle disting
 
 > Les valeurs de référence varient selon le type de test (plaintext, sérialisation JSON, stack complète) et le matériel : elles indiquent un **ordre de grandeur**, pas une vérité absolue. Nos propres mesures, faites sur la même machine, sont la justification finale.
 
-### 4.1 Glossaire — ce qui est réellement mesuré
+### 4.1 Glossaire ce qui est réellement mesuré
 
 Pour que chaque chiffre des tableaux suivants soit interprétable sans ambiguïté.
 
 #### Outils de mesure
 
-- **`wrk`** — générateur de charge HTTP (lancé via Docker) ; bombarde une URL et mesure débit + latence. Utilisé pour le **back**.
-- **Lighthouse** — outil de Google (Chrome headless) qui mesure les *Core Web Vitals* d'une page. Utilisé pour le **front**. Throttling **mobile Slow‑4G** appliqué par défaut.
+- **`wrk`** générateur de charge HTTP (lancé via Docker) ; bombarde une URL et mesure débit + latence. Utilisé pour le **back**.
+- **Lighthouse** outil de Google (Chrome headless) qui mesure les *Core Web Vitals* d'une page. Utilisé pour le **front**. Throttling **mobile Slow‑4G** appliqué par défaut.
 
 #### Métriques back (débit & latence)
 
@@ -122,7 +122,7 @@ Moyenne **pondérée** de 5 métriques (TTFB et TTI ne sont **pas** comptés, ce
 | **HTML brut** | Le document HTML envoyé par le serveur **avant** exécution du JS — exactement ce que voit un crawler (Googlebot). |
 | **Occurrences de « Député »** | Indicateur simple : combien de fois le contenu réel est présent dans ce HTML brut. Élevé = contenu indexable ; ≈ 1 = page vide pour un crawler. |
 
-### 4.2 Backend — débit & latence
+### 4.2 Backend débit & latence
 
 **Ordres de grandeur de référence (TechEmpower / synthèses publiques) :**
 
@@ -134,7 +134,7 @@ Moyenne **pondérée** de 5 métriques (TTFB et TTI ne sont **pas** comptés, ce
 
 L’écart de débit brut entre FastAPI et Django est de l’ordre d’un **facteur 3 à 10** selon les tests — mais uniquement sur l’**API brute**. Pour POPolitics, dont les charges sont surtout du **CRUD et de l’agrégation de données**, et où la maintenabilité d’une **stack unique** prime, ce gain ne suffit pas à introduire un second framework : **Django est retenu pour tous les services**, y compris `ia-service`.
 
-**Nos mesures** — scripts : [`benchmarks/backend`](benchmarks/README.md#1-backend--django-vs-fastapi-overhead-du-framework)
+**Nos mesures** scripts : [`benchmarks/backend`](benchmarks/README.md#1-backend--django-vs-fastapi-overhead-du-framework)
 Outil de charge : **`wrk`** (8 threads, 50 connexions, 12 s). Les deux apps sont servies à
 serveur égal (`uvicorn`, 1 worker), endpoints identiques, sans middleware. FastAPI en handlers
 `async`, Django en vues sync via ASGI — usage représentatif de chacun.
@@ -149,14 +149,14 @@ serveur égal (`uvicorn`, 1 worker), endpoints identiques, sans middleware. Fast
 > Machine de test : AMD Ryzen 5 5500U (12 threads logiques), 8 Go RAM, Windows 11 — Python 3.13, Django 6.0, FastAPI 0.138 — Date : 2026‑06‑25.
 > Mesures *indicatives* : client (`wrk`) et serveurs colocalisés sur la même machine, 1 seul worker `uvicorn` → forte variance sur les queues (p99). Lire surtout le **débit** et la **médiane p50**, confirmés sur un second run à 200 connexions (FastAPI `/json` 922 req/s vs Django 265 req/s).
 
-**Lecture — pourquoi Django reste le bon choix :**
+**Lecture pourquoi Django reste le bon choix :**
 
 - Sur une **réponse minimale** (`/json`), FastAPI est nettement plus rapide (**~5× le débit**). C'est le seul cas où l'écart est marqué — un profil peu représentatif de nos endpoints.
 - Sur une **grosse charge utile tabulaire** (`/deputes`, 200 objets) — qui correspond à **nos vrais endpoints data/CRUD** — la tendance **s'inverse** : **Django passe devant** (163 vs 98 req/s), car la sérialisation par défaut de FastAPI (`jsonable_encoder` sur chaque objet) coûte plus cher que le `JsonResponse` de Django sur de gros volumes.
 
 Autrement dit : sur **le type de charge réel de POPolitics**, Django fait jeu égal voire mieux que FastAPI. L'avantage de FastAPI se limite aux micro‑réponses, ce qui **ne justifie pas** d'ajouter et de maintenir un second framework. Le benchmark **conforte donc le choix d'un socle Django unique** pour l'ensemble des services, IA comprise.
 
-### 4.3 Frontend — Core Web Vitals (Next.js SSR/SSG vs SPA React)
+### 4.3 Frontend Core Web Vitals (Next.js SSR/SSG vs SPA React)
 
 **Ordres de grandeur de référence (synthèses Core Web Vitals 2025) :**
 
@@ -180,7 +180,6 @@ Page identique (table de 200 députés), build **production**, moyenne sur 5 run
 | **SPA React** (CSR, données *inlinées* — cas irréaliste) | **98/100** | 15 ms | 1 286 ms | **1 346 ms** | **1 286 ms** | **152 ms** | **1 603 ms** | 0,00 |
 | **SPA React** (CSR, **+ fetch API réel** — cas réaliste) | 98/100 | **11 ms** | 1 298 ms | 1 489 ms | 1 324 ms | 131 ms | 1 609 ms | 0,00 |
 
-> Machine de test : AMD Ryzen 5 5500U, 8 Go RAM, Windows 11 — Next 14.2 / Vite 5 / React 18 — Lighthouse (throttling mobile Slow‑4G par défaut), moyenne 5 runs — Date : 2026‑06‑25.
 > La 2ᵉ ligne (données dans le bundle) **fausse la comparaison en faveur de la SPA** : une vraie SPA va chercher ses données via l'`api`. La 3ᵉ ligne mesure ce cas réaliste.
 
 **Lecture honnête — le speed test localhost ne suffit PAS à justifier Next.js.** Sur cette page triviale, servie en localhost (latence réseau ~0) et avec les données *inlinées* dans le bundle, **la SPA fait jeu égal voire mieux** : meilleur score, meilleur LCP, TTFB plus bas (simple fichier statique), TBT bien plus faible (Next.js paie son runtime d'**hydratation**). C'est attendu : dans ces conditions, les avantages structurels du SSR (latence réseau réelle, cascade de fetch d'API, gros contenus) **ne se manifestent pas**. Conclusion importante : **choisir Next.js sur la seule base d'un micro‑benchmark de vitesse serait une erreur de raisonnement.**
