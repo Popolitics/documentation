@@ -21,15 +21,15 @@ Le projet POPolitics s'appuie sur un cadre **Scrum adapté** au contexte étudia
 
 ### 2.2 Sprints
 
-La durée des sprints est **variable** et calée sur le rythme d'alternance Master 1ère et 2ème année :
+La durée des sprints est **fixe** et alignée sur le rythme d'alternance M2 :
 
-| Phase | Durée en présentiel | Durée en distanciel |
-| :--- | :---: | :---: |
-| Rythme M1 | 2 semaines | 6 semaines |
-| Rythme M2 | 1 semaine | 9 semaines |
+| Rythme M2 | Durée d'un sprint |
+| :--- | :---: |
+| Cycle de référence | 9 semaines |
 
-- En **présentiel** : 1 sprint = durée de la période (2 semaines ou 1 semaine).
-- En **distanciel** : les sprints suivent le même principe mais s'adaptent à la période (6 ou 9 semaines), découpée en sous-sprints selon l'avancement.
+- Les sprints ont une durée cible de **9 semaines**.
+- Les semaines de présentiel (follow-up) sont intégrées dans le sprint en cours ; elles ne créent pas de mini-sprint séparé.
+- En fin d'annee, le dernier sprint peut etre plus court pour s'aligner sur la date de fin du projet.
 - Chaque sprint démarre avec un **Sprint Planning** et se clôt avec une **Sprint Review** et une **Sprint Retrospective**.
 - Le contenu d'un sprint est sélectionné depuis le **Product Backlog** (liste priorisée de toutes les user stories et tâches du projet).
 
