@@ -146,7 +146,6 @@ serveur égal (`uvicorn`, 1 worker), endpoints identiques, sans middleware. Fast
 | **FastAPI** `/deputes` | liste de 200 objets | 98 | 445 ms | 685 ms | 1,11 s |
 | **Django** `/deputes`  | liste de 200 objets | **163** | 274 ms | 382 ms | 519 ms |
 
-> Machine de test : AMD Ryzen 5 5500U (12 threads logiques), 8 Go RAM, Windows 11 — Python 3.13, Django 6.0, FastAPI 0.138 — Date : 2026‑06‑25.
 > Mesures *indicatives* : client (`wrk`) et serveurs colocalisés sur la même machine, 1 seul worker `uvicorn` → forte variance sur les queues (p99). Lire surtout le **débit** et la **médiane p50**, confirmés sur un second run à 200 connexions (FastAPI `/json` 922 req/s vs Django 265 req/s).
 
 **Lecture pourquoi Django reste le bon choix :**
