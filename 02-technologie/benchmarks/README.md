@@ -7,7 +7,7 @@ L'objectif n'est **pas** de produire un benchmark de laboratoire parfait, mais d
 mesure honnête, reproductible sur la machine de l'équipe, qui illustre concrètement les écarts
 attendus entre les options envisagées.
 
->  Les chiffres dépendent fortement de la machine. Lancez toujours les deux côtés d'une
+> Les chiffres dépendent fortement de la machine. Lancez toujours les deux côtés d'une
 > comparaison **sur la même machine, dans la même session**, et reportez la config matérielle.
 
 ---
@@ -113,7 +113,7 @@ node node_modules/vite/bin/vite.js preview --port 4173  # laisser tourner
 ./frontend/lighthouse_bench.ps1 -Url "http://localhost:4173" -Runs 5 -Label "SPA React"
 ```
 
->  En **localhost** (latence réseau ~0) et avec des données inlinées, la SPA peut faire jeu égal
+> En **localhost** (latence réseau ~0) et avec des données inlinées, la SPA peut faire jeu égal
 > voire mieux : les avantages du SSR (réseau réel, cascade de fetch, SEO) ne s'y voient pas.
 > Nous ne pouvons pas conclure « Next.js inutile » sur ce seul test, ce qui nous amène au point (b), décisif.
 

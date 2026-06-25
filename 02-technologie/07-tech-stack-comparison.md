@@ -25,26 +25,23 @@ Ce document présente, de manière synthétique, les principales **options techn
 
 | Option      | Avantages principaux                                                                                         | Limites / remarques                                                                                          | Choix retenu                                                              |
 |------------|--------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| **Django** | Framework web complet (ORM, auth, admin), écosystème mature, très adapté aux CRUD et aux APIs REST classiques | Plus « lourd » que FastAPI pour de la simple API, débit brut plus faible (voir [Performances mesurées](#4-performances-mesurées)) | **Oui** – socle des services web (`api`, `auth-service`, `data-service`) |
-| **FastAPI**| Très rapide (ASGI/async), orienté API, typing moderne, excellent pour des services à forte charge ou faible latence | Nécessite d’assembler plus de briques (auth, admin, ORM), moins « tout‑en‑un » | **Oui, ciblé** – retenu pour `ia-service` (inférence IA), là où le débit et la latence priment |
+| **Django** | Framework web complet (ORM, auth, admin), écosystème mature, très adapté aux CRUD et aux APIs REST classiques | Plus « lourd » que FastAPI pour de la simple API, débit brut plus faible sur les très petites réponses (voir [Performances mesurées](#4-performances-mesurées)) | **Oui** – socle **unique** de tous les services backend (`api`, `auth-service`, `data-service`, `ia-service`) |
+| FastAPI     | Très rapide (ASGI/async), orienté API, typing moderne, excellent pour des services à forte charge ou faible latence | Nécessite d’assembler plus de briques (auth, admin, ORM), moins « tout‑en‑un » ; ajouterait un 2ᵉ framework à maintenir | Non – évalué comme alternative (benchmark en [§4](#4-performances-mesurées)), non retenu pour conserver une **stack unique** |
 
-**Conclusion :** le choix n’est **pas exclusif** mais ciblé selon le besoin de chaque service.
+**Conclusion :** **Django est retenu comme socle backend unique**, pour **tous** les services, y compris `ia-service`. On privilégie la richesse fonctionnelle (ORM, auth, admin, migrations), la productivité et la **cohérence d’une seule stack** plutôt que le débit brut.
 
-- **Django** est le **socle des services web** (`api`, `auth-service`, `data-service`) : on y privilégie la richesse fonctionnelle (ORM, auth, admin, migrations) et la productivité, sur des charges modérées de type CRUD/agrégation.
-- **FastAPI** est retenu pour **`ia-service`** : ce service d’inférence est le plus sensible à la latence et au débit, et bénéficie directement du modèle asynchrone (ASGI) — cohérent avec l’architecture décrite dans [18-architecture.md](18-architecture.md).
-
-Cette répartition est justifiée chiffres à l’appui dans la section [Performances mesurées](#4-performances-mesurées).
+FastAPI a été **mesuré** comme alternative (voir [§4](#4-performances-mesurées)) : il n’est plus rapide que Django que sur de **très petites réponses**, alors que sur une charge de données réaliste (listes tabulaires), Django fait jeu égal voire mieux. Cet écart ne justifie pas l’ajout d’un second framework à maintenir : un socle Django unique reste le meilleur compromis pour la taille de l’équipe et le type de charge de POPolitics.
 
 ### 2.2 Backend Python vs Backend JavaScript
 
 | Option                                   | Avantages principaux                                                                                                                 | Limites / remarques                                                                                                      | Choix retenu                                                              |
 |------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| **Backend Python (Django)**              | Aligné avec l’écosystème data/IA (ETL en Python, socle IA exposé en FastAPI), forte cohérence technique, mutualisation des compétences | Moins homogène avec le frontend JavaScript, nécessité de maîtriser deux langages sur le projet                           | **Oui** – meilleure intégration avec ETL & IA, moins de friction technique globale |
+| **Backend Python (Django)**              | Aligné avec l’écosystème data/IA (ETL en Python, modèles IA en Python), forte cohérence technique, mutualisation des compétences | Moins homogène avec le frontend JavaScript, nécessité de maîtriser deux langages sur le projet                           | **Oui** – meilleure intégration avec ETL & IA, moins de friction technique globale |
 | Backend JavaScript (Node.js, Express/Nest) | Homogénéité full‑JS (front + back), grande communauté, écosystème riche de packages                                                 | Moins naturel pour interfacer directement les pipelines ETL Python et les modèles IA Python ; nécessite plus de “colle” entre mondes JS et Python | Non, écarté pour éviter la complexité d’un pont JS ↔ Python permanent    |
 
 **Conclusion :** un **backend Python** est privilégié pour rester cohérent avec :
 - la plateforme data et les pipelines ETL majoritairement en Python ;
-- le socle IA également en Python (FastAPI) ;
+- les modèles IA également développés en Python ;
 ce qui simplifie les échanges entre services et réduit les risques d’incompréhension technique au sein de l’équipe.
 
 ---
@@ -77,12 +74,12 @@ Cette section objective les choix ci‑dessus par des **chiffres**. Elle disting
 
 Pour que chaque chiffre des tableaux suivants soit interprétable sans ambiguïté.
 
-**Outils de mesure**
+#### Outils de mesure
 
 - **`wrk`** — générateur de charge HTTP (lancé via Docker) ; bombarde une URL et mesure débit + latence. Utilisé pour le **back**.
 - **Lighthouse** — outil de Google (Chrome headless) qui mesure les *Core Web Vitals* d'une page. Utilisé pour le **front**. Throttling **mobile Slow‑4G** appliqué par défaut.
 
-**Métriques back (débit & latence)**
+#### Métriques back (débit & latence)
 
 | Terme | Définition | Sens |
 |---|---|---|
@@ -90,7 +87,9 @@ Pour que chaque chiffre des tableaux suivants soit interprétable sans ambiguït
 | **Latence p50** | Médiane : 50 % des requêtes sont plus rapides que cette valeur. | Plus bas = mieux |
 | **Latence p90 / p99** | 90 % / 99 % des requêtes sont plus rapides. Le **p99** révèle les pires cas (queue de distribution). | Plus bas = mieux |
 
-**Métriques front (Core Web Vitals & associées)** — ordre chronologique du chargement :
+#### Métriques front (Core Web Vitals & associées)
+
+Ordre chronologique du chargement :
 
 | Terme | Définition | Bon seuil (mobile) |
 |---|---|---|
@@ -102,7 +101,9 @@ Pour que chaque chiffre des tableaux suivants soit interprétable sans ambiguït
 | **TTI** *(Time To Interactive)* | Instant où la page devient **pleinement réactive**. | — (diagnostic) |
 | **CLS** *(Cumulative Layout Shift)* | À quel point le contenu **saute** pendant le chargement (sans unité). | < 0,1 |
 
-**Score de performance Lighthouse (/100)** — moyenne **pondérée** de 5 métriques (TTFB et TTI ne sont **pas** comptés, ce sont des diagnostics) :
+#### Score de performance Lighthouse (/100)
+
+Moyenne **pondérée** de 5 métriques (TTFB et TTI ne sont **pas** comptés, ce sont des diagnostics) :
 
 | Métrique | Poids |
 |---|---|
@@ -114,7 +115,7 @@ Pour que chaque chiffre des tableaux suivants soit interprétable sans ambiguït
 
 > Conséquence : le score « punit » surtout le **JS bloquant (TBT)**. Un framework qui hydrate beaucoup de JS (Next.js) peut donc scorer plus bas qu'une SPA sur une petite page, **sans** que cela traduise une mauvaise expérience réelle. Le score **ne mesure pas le SEO** → d'où le test séparé sur le HTML brut.
 
-**Mesure SEO / crawlabilité**
+#### Mesure SEO / crawlabilité
 
 | Terme | Définition |
 |---|---|
@@ -127,11 +128,11 @@ Pour que chaque chiffre des tableaux suivants soit interprétable sans ambiguït
 
 | Framework | Débit indicatif (sérialisation JSON) | Profil de latence | Lecture |
 |---|---|---|---|
-| **FastAPI** (ASGI/async) | le plus élevé des trois (jusqu’à ~plusieurs ×10⁴ req/s/cœur selon le test) | la plus faible à forte concurrence | idéal pour un service d’inférence sous charge |
+| **FastAPI** (ASGI/async) | le plus élevé des trois (jusqu’à ~plusieurs ×10⁴ req/s/cœur selon le test) | la plus faible à forte concurrence | alternative la plus rapide, mais ajouterait un 2ᵉ framework |
 | **Node.js** (Express/Nest) | intermédiaire | bonne, régulière | non retenu (voir 2.2 : pont JS ↔ Python) |
-| **Django** (DRF) | le plus faible des trois sur l’API brute | correcte sur charge CRUD modérée | suffisant pour `api` / `data-service`, gain net en productivité |
+| **Django** (DRF) | le plus faible des trois sur l’API brute | correcte sur charge CRUD modérée | **retenu** pour tous les services : gain net en productivité, socle unique |
 
-L’écart de débit brut entre FastAPI et Django est de l’ordre d’un **facteur 3 à 10** selon les tests : c’est précisément ce qui motive le choix de **FastAPI pour `ia-service`** (chemin critique en latence) et de **Django pour les services web** (où la richesse fonctionnelle prime sur le débit brut).
+L’écart de débit brut entre FastAPI et Django est de l’ordre d’un **facteur 3 à 10** selon les tests — mais uniquement sur l’**API brute**. Pour POPolitics, dont les charges sont surtout du **CRUD et de l’agrégation de données**, et où la maintenabilité d’une **stack unique** prime, ce gain ne suffit pas à introduire un second framework : **Django est retenu pour tous les services**, y compris `ia-service`.
 
 **Nos mesures** — scripts : [`benchmarks/backend`](benchmarks/README.md#1-backend--django-vs-fastapi-overhead-du-framework)
 Outil de charge : **`wrk`** (8 threads, 50 connexions, 12 s). Les deux apps sont servies à
@@ -148,12 +149,12 @@ serveur égal (`uvicorn`, 1 worker), endpoints identiques, sans middleware. Fast
 > Machine de test : AMD Ryzen 5 5500U (12 threads logiques), 8 Go RAM, Windows 11 — Python 3.13, Django 6.0, FastAPI 0.138 — Date : 2026‑06‑25.
 > Mesures *indicatives* : client (`wrk`) et serveurs colocalisés sur la même machine, 1 seul worker `uvicorn` → forte variance sur les queues (p99). Lire surtout le **débit** et la **médiane p50**, confirmés sur un second run à 200 connexions (FastAPI `/json` 922 req/s vs Django 265 req/s).
 
-**Lecture — et c'est le point clé :**
+**Lecture — pourquoi Django reste le bon choix :**
 
-- Sur une **réponse minimale** (`/json`), FastAPI écrase Django : **~5× le débit** et une médiane ~5× plus basse. C'est le scénario d'un **service d'inférence** qui enchaîne beaucoup de petites requêtes concurrentes → **justifie FastAPI pour `ia-service`**.
-- Sur une **grosse charge utile tabulaire** (`/deputes`, 200 objets), la tendance **s'inverse** : Django passe devant (**163 vs 98 req/s**, médiane plus basse). La sérialisation par défaut de FastAPI (`jsonable_encoder` sur chaque objet) coûte plus cher que le `JsonResponse` de Django sur de gros volumes. C'est le scénario des **endpoints data/CRUD** → **conforte Django pour `api` / `data-service`**.
+- Sur une **réponse minimale** (`/json`), FastAPI est nettement plus rapide (**~5× le débit**). C'est le seul cas où l'écart est marqué — un profil peu représentatif de nos endpoints.
+- Sur une **grosse charge utile tabulaire** (`/deputes`, 200 objets) — qui correspond à **nos vrais endpoints data/CRUD** — la tendance **s'inverse** : **Django passe devant** (163 vs 98 req/s), car la sérialisation par défaut de FastAPI (`jsonable_encoder` sur chaque objet) coûte plus cher que le `JsonResponse` de Django sur de gros volumes.
 
-Autrement dit, le benchmark **ne désigne pas un gagnant unique** : il valide la **répartition** retenue (FastAPI là où la latence/concurrence prime, Django là où la richesse fonctionnelle et les gros volumes tabulaires priment). *Note : FastAPI pourrait rattraper son retard sur `/deputes` avec une réponse optimisée (`ORJSONResponse`), au prix de plus de code — non nécessaire pour `ia-service` dont les réponses sont petites.*
+Autrement dit : sur **le type de charge réel de POPolitics**, Django fait jeu égal voire mieux que FastAPI. L'avantage de FastAPI se limite aux micro‑réponses, ce qui **ne justifie pas** d'ajouter et de maintenir un second framework. Le benchmark **conforte donc le choix d'un socle Django unique** pour l'ensemble des services, IA comprise.
 
 ### 4.3 Frontend — Core Web Vitals (Next.js SSR/SSG vs SPA React)
 
