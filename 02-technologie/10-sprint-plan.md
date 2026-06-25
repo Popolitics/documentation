@@ -1,293 +1,145 @@
-# POPolitics – Plan de Sprints
+# POPolitics - Plan de Sprints
 
 ## 1. Introduction
 
-Ce document décrit le **découpage du projet en sprints**, aligné sur le rythme d'alternance Master (voir [Méthodologie](../01-organisation/02-project-methodology-management.md)).
+Ce document décrit le **decoupage du projet en sprints**, aligne sur le rythme d'alternance Master (voir [Methodologie](../01-organisation/02-project-methodology-management.md)).
 
 ### Principes
 
-- Les sprints sont calés sur le **calendrier d'alternance** : présentiel et distanciel alternent selon le rythme M1 (2S / 6S) ou M2 (1S / 9S).
-- En **distanciel**, une longue période est découpée en **sous-sprints de 2 semaines** pour maintenir le rythme.
-- Le contenu exact de chaque sprint (user stories, story points) est **validé lors du Sprint Planning** et affiné lors des séances d'**Affinage du backlog**.
-- Les user stories référencées ici sont issues de [09-user-stories.md](09-user-stories.md). Les story points sont à estimer en séance.
+- Les sprints ont une **duree fixe de 9 semaines**.
+- Le planning demarre le **21/09/2026** et se termine le **25/06/2027**.
+- Les semaines de presentiel sont integrees dans les sprints en cours.
+- Le dernier sprint peut etre plus court que 9 semaines pour s'aligner sur la date de fin d'annee.
+- Le contenu exact de chaque sprint (user stories, story points) est valide lors du Sprint Planning et affine lors des seances d'affinage du backlog.
 
 ---
 
-## 2. Vue d'ensemble des phases
+## 2. Vue d'ensemble
 
-| Phase | Contexte | Durée indicative | Sprints |
-| :--- | :--- | :---: | :---: |
-| Phase 0 | Cadrage & setup | 1–2 semaines | Sprint 0 |
-| Phase 1 | Fondations : Auth + ETL + Infra | 6–9 semaines | Sprint 1 à 3 |
-| Phase 2 | MVP Portail collectif | 2–4 semaines | Sprint 4 à 5 |
-| Phase 3 | Enrichissement : tendances, page perso | 6–9 semaines | Sprint 6 à 8 |
-| Phase 4 | Couche IA & finition | 2–4 semaines | Sprint 9 à 10 |
-| Phase 5 | Stabilisation & soutenance | 1–2 semaines | Sprint 11 |
-
-> Les dates réelles sont à renseigner par l'équipe une fois le calendrier d'alternance de l'année connu.
+| Periode | Dates | Duree | Objectif global |
+| :--- | :--- | :---: | :--- |
+| Sprint 1 | 21/09/2026 -> 20/11/2026 | 9 semaines | Fondations (Auth + ETL) |
+| Sprint 2 | 23/11/2026 -> 22/01/2027 | 9 semaines | MVP Portail collectif |
+| Sprint 3 | 25/01/2027 -> 26/03/2027 | 9 semaines | Enrichissements (tendances + page perso) |
+| Sprint 4 | 29/03/2027 -> 28/05/2027 | 9 semaines | IA + finitions |
+| Sprint 5 | 31/05/2027 -> 25/06/2027 | 4 semaines | Stabilisation finale + soutenance |
 
 ---
 
-## 3. Détail des Sprints
+## 3. Detail des sprints
 
----
-
-### Sprint 0 – Cadrage & Setup
+### Sprint 1 - Fondations (Must)
 
 | | |
 | :--- | :--- |
-| **Contexte** | Présentiel |
-| **Durée** | 1–2 semaines |
-| **Dates** | *À renseigner* |
-| **Sprint Goal** | Mettre en place les fondations techniques et organisationnelles avant tout développement produit. |
+| **Duree** | 9 semaines |
+| **Dates** | 21/09/2026 -> 20/11/2026 |
+| **Sprint Goal** | Poser les fondations techniques: authentification operationnelle et pipelines ETL de base. |
 
-**Objectifs :**
+**User stories ciblees :**
 
-- Initialisation des dépôts Git (backend, frontend, data, documentation).
-- Mise en place de la stack Docker locale (Django, Next.js, PostgreSQL, Kestra).
-- Configuration de GitHub Projects (colonnes, labels, règles de contribution).
-- Lecture et validation collective des documents clés : architecture, MoSCoW, user stories, DoD.
-- Attribution des premiers rôles et responsabilités (OBS).
-- Rédaction du premier Sprint Backlog opérationnel.
-
-**User stories ciblées :** aucune (sprint technique pur)
-
-**Critère de fin de sprint :** chaque membre de l'équipe peut lancer la stack complète en local en moins de 30 minutes.
-
----
-
-### Sprint 1 – Authentification & Ingestion des données (Must)
-
-| | |
-| :--- | :--- |
-| **Contexte** | Distanciel – Sous-sprint 1/3 |
-| **Durée** | 2 semaines |
-| **Dates** | *À renseigner* |
-| **Sprint Goal** | Disposer d'un service d'authentification fonctionnel et lancer les premiers pipelines d'ingestion de données. |
-
-**User stories ciblées :**
-
-| ID | Titre | Priorité |
+| ID | Titre | Priorite |
 | :--- | :--- | :---: |
-| US-101 | Créer un compte | Must |
+| US-101 | Creer un compte | Must |
 | US-102 | Se connecter | Must |
-| US-103 | Se déconnecter | Must |
-| US-601 | Ingestion données AN | Must |
-
-**Notes :** US-601 peut démarrer en parallèle de l'auth car il n'y a pas de dépendance technique directe.
-
----
-
-### Sprint 2 – Pipelines ETL complets (Must)
-
-| | |
-| :--- | :--- |
-| **Contexte** | Distanciel – Sous-sprint 2/3 |
-| **Durée** | 2 semaines |
-| **Dates** | *À renseigner* |
-| **Sprint Goal** | Compléter l'ingestion des trois sources de données et normaliser les données en zone Silver. |
-
-**User stories ciblées :**
-
-| ID | Titre | Priorité |
-| :--- | :--- | :---: |
-| US-602 | Ingestion données Sénat | Must |
-| US-603 | Ingestion données UE | Must |
+| US-103 | Se deconnecter | Must |
+| US-601 | Ingestion donnees AN | Must |
+| US-602 | Ingestion donnees Senat | Must |
+| US-603 | Ingestion donnees UE | Must |
 | US-604 | Normalisation zone Silver | Must |
 
-**Notes :** Les datamarts PostgreSQL AN, Sénat et UE doivent être créés et documentés à la fin de ce sprint.
-
 ---
 
-### Sprint 3 – APIs backend & consolidation (Must)
+### Sprint 2 - MVP Portail collectif
 
 | | |
 | :--- | :--- |
-| **Contexte** | Distanciel – Sous-sprint 3/3 |
-| **Durée** | 2 semaines |
-| **Dates** | *À renseigner* |
-| **Sprint Goal** | Exposer les premières APIs REST depuis le backend Django pour alimenter le frontend. |
+| **Duree** | 9 semaines |
+| **Dates** | 23/11/2026 -> 22/01/2027 |
+| **Sprint Goal** | Livrer un portail collectif utilisable avec donnees reelles, filtres et premiers indicateurs. |
 
-**User stories ciblées :**
+**User stories ciblees :**
 
-| ID | Titre | Priorité |
+| ID | Titre | Priorite |
 | :--- | :--- | :---: |
 | US-201 | Consulter tableau des votes | Must |
-
-**Notes :** Ce sprint est le premier à relier la couche data au frontend. L'endpoint `/votes` doit retourner des données réelles issues des datamarts.
-
----
-
-### Sprint 4 – MVP Portail collectif (Must)
-
-| | |
-| :--- | :--- |
-| **Contexte** | Présentiel |
-| **Durée** | 2 semaines |
-| **Dates** | *À renseigner* |
-| **Sprint Goal** | Livrer une première version du Portail collectif utilisable de bout en bout : données réelles, filtres de base, interface fonctionnelle. |
-
-**User stories ciblées :**
-
-| ID | Titre | Priorité |
-| :--- | :--- | :---: |
 | US-202 | Filtrer les votes (base) | Must |
-
-**Notes :** À la fin de ce sprint, une démo interne complète doit être réalisable : connexion → consultation du tableau des votes filtré → déconnexion.
-
----
-
-### Sprint 5 – Enrichissement données & filtres avancés (Should)
-
-| | |
-| :--- | :--- |
-| **Contexte** | Distanciel – Sous-sprint 1/3 |
-| **Durée** | 2 semaines |
-| **Dates** | *À renseigner* |
-| **Sprint Goal** | Enrichir la plateforme data avec la zone Gold et proposer des filtres avancés sur le portail. |
-
-**User stories ciblées :**
-
-| ID | Titre | Priorité |
-| :--- | :--- | :---: |
-| US-605 | Agrégation zone Gold | Should |
-| US-203 | Filtrer les votes (avancé) | Should |
+| US-605 | Agregation zone Gold | Should |
+| US-203 | Filtrer les votes (avance) | Should |
 | US-204 | Indicateurs d'un vote | Should |
 
 ---
 
-### Sprint 6 – Indicateurs & cohérence des élus (Should)
+### Sprint 3 - Enrichissements (Should)
 
 | | |
 | :--- | :--- |
-| **Contexte** | Distanciel – Sous-sprint 2/3 |
-| **Durée** | 2 semaines |
-| **Dates** | *À renseigner* |
-| **Sprint Goal** | Afficher les indicateurs de cohérence des élus et permettre la comparaison entre élus ou groupes. |
+| **Duree** | 9 semaines |
+| **Dates** | 25/01/2027 -> 26/03/2027 |
+| **Sprint Goal** | Ajouter les fonctionnalites d'analyse politique et les usages personnalises. |
 
-**User stories ciblées :**
+**User stories ciblees :**
 
-| ID | Titre | Priorité |
+| ID | Titre | Priorite |
 | :--- | :--- | :---: |
-| US-301 | Cohérence d'un élu | Should |
-| US-302 | Comparer élus / groupes | Should |
+| US-301 | Coherence d'un elu | Should |
+| US-302 | Comparer elus / groupes | Should |
+| US-304 | Croisement AN / Senat / UE | Should |
+| US-501 | Suivre des elus | Should |
+| US-502 | Timeline d'un elu suivi | Should |
+| US-503 | Configurer themes d'interet | Should |
+| US-504 | Notifications personnalisees | Should |
 
 ---
 
-### Sprint 7 – Page personnelle v1 (Should)
+### Sprint 4 - IA et finitions (Should/Could)
 
 | | |
 | :--- | :--- |
-| **Contexte** | Distanciel – Sous-sprint 3/3 |
-| **Durée** | 2 semaines |
-| **Dates** | *À renseigner* |
-| **Sprint Goal** | Permettre à un utilisateur de suivre des élus, configurer ses thèmes d'intérêt et consulter une timeline personnalisée. |
+| **Duree** | 9 semaines |
+| **Dates** | 29/03/2027 -> 28/05/2027 |
+| **Sprint Goal** | Integrer la couche IA, finaliser les visualisations avancees et traiter les finitions. |
 
-**User stories ciblées :**
+**User stories ciblees :**
 
-| ID | Titre | Priorité |
+| ID | Titre | Priorite |
 | :--- | :--- | :---: |
-| US-501 | Suivre des élus | Should |
-| US-503 | Configurer thèmes d'intérêt | Should |
-| US-502 | Timeline d'un élu suivi | Should |
-
----
-
-### Sprint 8 – Notifications & Croisement données (Should)
-
-| | |
-| :--- | :--- |
-| **Contexte** | Présentiel |
-| **Durée** | 1–2 semaines |
-| **Dates** | *À renseigner* |
-| **Sprint Goal** | Activer les notifications personnalisées et le croisement AN / Sénat / UE. |
-
-**User stories ciblées :**
-
-| ID | Titre | Priorité |
-| :--- | :--- | :---: |
-| US-504 | Notifications personnalisées | Should |
-| US-304 | Croisement AN / Sénat / UE | Should |
-
----
-
-### Sprint 9 – Couche IA (Should)
-
-| | |
-| :--- | :--- |
-| **Contexte** | Distanciel – Sous-sprint 1/2 |
-| **Durée** | 2 semaines |
-| **Dates** | *À renseigner* |
-| **Sprint Goal** | Déployer un premier modèle IA (résumé ou classification) et exposer un endpoint d'inférence consommable par le frontend. |
-
-**User stories ciblées :**
-
-| ID | Titre | Priorité |
-| :--- | :--- | :---: |
-| US-401 | Résumé IA d'un débat | Should |
-| US-402 | Fiche éclair sur un texte | Should |
-
-**Notes :** Sprint le plus risqué techniquement — prévoir une réduction de périmètre si la charge est trop importante (US-402 peut passer en Could si nécessaire).
-
----
-
-### Sprint 10 – Cartographie, export & finitions (Should / Could)
-
-| | |
-| :--- | :--- |
-| **Contexte** | Distanciel – Sous-sprint 2/2 |
-| **Durée** | 2 semaines |
-| **Dates** | *À renseigner* |
-| **Sprint Goal** | Compléter les visualisations avancées et traiter les fonctionnalités Could Have selon la capacité disponible. |
-
-**User stories ciblées :**
-
-| ID | Titre | Priorité |
-| :--- | :--- | :---: |
+| US-401 | Resume IA d'un debat | Should |
+| US-402 | Fiche eclair sur un texte | Should |
 | US-303 | Cartographie des alliances | Should |
-| US-104 | Réinitialiser mot de passe | Should |
+| US-104 | Reinitialiser mot de passe | Should |
 | US-205 | Exporter les votes | Could |
 
 ---
 
-### Sprint 11 – Stabilisation & Soutenance
+## 4. Sprint 5 - Stabilisation & soutenance
 
 | | |
 | :--- | :--- |
-| **Contexte** | Présentiel |
-| **Durée** | 1–2 semaines |
-| **Dates** | *À renseigner* |
-| **Sprint Goal** | Stabiliser la plateforme, corriger les derniers bugs, préparer le scénario de démo et la soutenance. |
+| **Duree** | 4 semaines |
+| **Dates** | 31/05/2027 -> 25/06/2027 |
+| **Objectif** | Stabiliser, corriger, preparer la soutenance et finaliser les livrables academiques. |
 
-**Objectifs :**
+**Travaux prevus :**
 
-- Correction des bugs identifiés lors des sprints précédents.
+- Corrections de bugs transverses.
 - Tests de bout en bout sur les parcours critiques.
-- Préparation du scénario de démonstration.
-- Rédaction / mise à jour de la documentation technique.
-- Préparation des slides de soutenance.
-
-**User stories ciblées :** pas de nouvelles stories — sprint de stabilisation uniquement.
+- Preparation du scenario de demonstration.
+- Mise a jour finale de la documentation technique.
+- Preparation des slides de soutenance.
 
 ---
 
-## 4. Récapitulatif des sprints
+## 5. Recapitulatif
 
-| Sprint | Contexte | Durée | Sprint Goal résumé | Stories Must | Stories Should |
-| :--- | :---: | :---: | :--- | :---: | :---: |
-| Sprint 0 | Présentiel | 1–2 sem. | Setup & cadrage | – | – |
-| Sprint 1 | Distanciel | 2 sem. | Auth + ETL AN | 4 | – |
-| Sprint 2 | Distanciel | 2 sem. | ETL Sénat, UE + Silver | 3 | – |
-| Sprint 3 | Distanciel | 2 sem. | APIs backend | 1 | – |
-| Sprint 4 | Présentiel | 2 sem. | MVP Portail collectif | 1 | – |
-| Sprint 5 | Distanciel | 2 sem. | Gold + filtres avancés | – | 3 |
-| Sprint 6 | Distanciel | 2 sem. | Cohérence & comparaison élus | – | 2 |
-| Sprint 7 | Distanciel | 2 sem. | Page personnelle v1 | – | 3 |
-| Sprint 8 | Présentiel | 1–2 sem. | Notifications + Cross-match | – | 2 |
-| Sprint 9 | Distanciel | 2 sem. | Couche IA | – | 2 |
-| Sprint 10 | Distanciel | 2 sem. | Visualisations + export | – | 3 |
-| Sprint 11 | Présentiel | 1–2 sem. | Stabilisation & soutenance | – | – |
+| Periode | Duree | Stories Must | Stories Should | Stories Could |
+| :--- | :---: | :---: | :---: | :---: |
+| Sprint 1 | 9 sem. | 7 | 0 | 0 |
+| Sprint 2 | 9 sem. | 2 | 3 | 0 |
+| Sprint 3 | 9 sem. | 0 | 7 | 0 |
+| Sprint 4 | 9 sem. | 0 | 4 | 1 |
+| Sprint 5 | 4 sem. | - | - | - |
 
-> **Total stories Must Have couvertes :** 9 / 9
-> **Total stories Should Have couvertes :** 15 / 15
-> **Stories Could Have :** traitées en Sprint 10 selon capacité disponible
+> **Total stories Must Have couvertes :** 9 / 9  
+> **Total stories Should Have couvertes :** 14 / 14  
+> **Total stories Could Have couvertes :** 1 / 1

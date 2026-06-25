@@ -27,6 +27,7 @@ Popolitics permet à chaque citoyen de comprendre concrètement l’action de se
   - Ressources matérielles & coûts (08-projet-ressources.md)  
   - User Stories ([09-user-stories.md](02-technologie/09-user-stories.md))  
   - Plan de Sprints ([10-sprint-plan.md](02-technologie/10-sprint-plan.md))  
+  - Diagramme de Gantt ([18-gantt-diagram.md](02-technologie/18-gantt-diagram.md))
   - Schéma d’architecture technique global (Schema_architecture.jpg)  
   - Autres schémas d’architecture technique (diagrammes)
 
