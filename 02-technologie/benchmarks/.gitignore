@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+*.report.json
+node_modules/
+.next/
+dist/
