@@ -249,7 +249,7 @@ LLM Gateway
       └── API LLM externe
 
 # 7. Limites connues
-Taille des textes parlementaires : Dépassement contexte LLM	-> Découpage en chunks
+Taille des textes parlementaires : Dépassement contexte LLM -> Découpage en chunks
 Hallucinations LLM : Réponses incorrectes -> RAG + sources
 Coût API externe : Budget variable -> Modèles locaux
 Qualité des résumés : Dépend du modèle -> Validation humaine
