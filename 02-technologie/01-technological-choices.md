@@ -139,14 +139,16 @@
 
 ### 8.2 Cas d’usage
 
-- Résumés automatiques.
-- Classification des textes politiques.
-- Analyse de tendances ou d’activité.
+- Résumés automatiques des lois et amendements votés (MVP)
+- Score de similarité lois / amendements et déclaration de chaque groupe (MVP)
+- Chatbot (V1)
 
 ### 8.3 Intégration
 
-- Modèles entraînés **hors frontend**.
-- Exposés via un **service dédié (IA Service)**, accessible par le backend Django.
+- Les modèles IA sont exécutés dans un service dédié (IA Service), indépendant du frontend.
+- Le backend Django consomme ce service via API pour les fonctionnalités IA (chatbot, résumé, similarité, classification).
+- Le service IA orchestre les appels LLM, la recherche vectorielle (RAG) et les requêtes SQL.
+- Déploiement possible avec API LLM externes.
 
 ---
 
