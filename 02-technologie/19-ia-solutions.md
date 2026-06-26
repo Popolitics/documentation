@@ -185,10 +185,8 @@ Réponse sourcée
 ## 4.1 Modèles LLM
 
 Deux modes de déploiement :
-
-Mode	        Usage
-Local	        Développement, tests, confidentialité
-API externe	    Production, montée en charge
+Mode : Local / Usage : Développement, tests, confidentialité
+Mode: API externe / Usage : roduction, montée en charge
 
 Exemples :
 - Mistral,
@@ -251,9 +249,8 @@ LLM Gateway
       └── API LLM externe
 
 # 7. Limites connues
-Limitation	                        Impact	                    Mitigation
-Taille des textes parlementaires	Dépassement contexte LLM	Découpage en chunks
-Hallucinations LLM	                Réponses incorrectes	    RAG + sources
-Coût API externe	                Budget variable	            Modèles locaux
-Qualité des résumés	                Dépend du modèle	        Validation humaine
-Similarité sémantique	            Score approximatif	        Ajustement du modèle embedding
+Taille des textes parlementaires : Dépassement contexte LLM	-> Découpage en chunks
+Hallucinations LLM : Réponses incorrectes -> RAG + sources
+Coût API externe : Budget variable -> Modèles locaux
+Qualité des résumés : Dépend du modèle -> Validation humaine
+Similarité sémantique : Score approximatif -> Ajustement du modèle embedding
