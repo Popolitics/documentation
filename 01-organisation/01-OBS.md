@@ -27,7 +27,9 @@ Projet étudiant de Master 2 visant à concevoir une plateforme web POPolitics p
 
 ## 2. Backend & Architecture Applicative
 
-### Responsable : Arthur – Support technique / Tech Lead : Jaures
+### Responsable : Samuel (Développeur Backend) – Support technique / Tech Lead : Jaures
+
+### Contribution transverse : Arthur (Data Integration Engineer)
 
 - **2.1 Architecture backend**  
   - 2.1.1 Choix du framework (ex. Django / FastAPI)  
@@ -41,6 +43,12 @@ Projet étudiant de Master 2 visant à concevoir une plateforme web POPolitics p
   - 2.3.1 Gestion de l’authentification / autorisation  
   - 2.3.2 Validation des entrées et gestion des erreurs  
   - 2.3.3 Optimisation des temps de réponse (caching, requêtes)
+- **2.4 Intégration plateforme Data**  
+  - 2.4.1 Coordination entre les socles ETL, IA et Datamarts  
+  - 2.4.2 Définition des contrats d’échange entre Data et Backend  
+  - 2.4.3 Synchronisation des schémas et formats exposés  
+  - 2.4.4 Support à l’intégration des services IA et Data  
+  - 2.4.5 Documentation des flux inter-systèmes
 
 ---
 
@@ -67,6 +75,8 @@ Projet étudiant de Master 2 visant à concevoir une plateforme web POPolitics p
 
 ### Responsables : Mehdi (ETL / Data Engineering), Chloé (IA / Data Science)
 
+### Contribution transverse : Arthur (Data Integration Engineer)
+
 - **4.1 Ingestion & préparation des données**  
   - 4.1.1 Conception des pipelines ETL depuis les sources (AN, Sénat, UE) vers la Landing Zone  
   - 4.1.2 Gestion des couches DATA BRONZE (raw), DATA SILVER (soft process) et DATA GOLD (ready to ingest)  
@@ -84,6 +94,12 @@ Projet étudiant de Master 2 visant à concevoir une plateforme web POPolitics p
   - 4.4.1 Conception et configuration des workflows d'orchestration dans Kestra  
   - 4.4.2 Supervision, logging et relance des jobs ETL  
   - 4.4.3 Coordination avec le pôle DevOps pour l'exécution en environnement contrôlé
+
+- **4.5 Coordination inter-socles**
+  - Interface entre ETL, IA et services backend
+  - Harmonisation des structures exposées
+  - Réduction de la charge d’intégration sur les pôles ETL et IA
+  - Support technique sur les flux de données
 
 ---
 

@@ -79,7 +79,7 @@ Outils envisagés :
 
 #### Backend
 
-Responsable : **Arthur**  
+Responsable : **Samuel**  
 Support technique : **Jaures (Tech Lead)**
 
 Compétences :
@@ -89,6 +89,8 @@ Compétences :
 - Framework backend (ex : Django / FastAPI)
 - Gestion des accès aux données
 - Intégration avec les services data et IA
+
+Contribution transverse : **Arthur (Data Integration Engineer)**
 
 ---
 
@@ -115,6 +117,7 @@ Responsables :
 
 - **Mehdi (ETL / Data engineering)**
 - **Chloé (IA / Data science)**
+- **Arthur (Data Integration Engineer)**
 
 Compétences :
 
@@ -123,6 +126,8 @@ Compétences :
 - stockage et structuration des données
 - modèles d’analyse ou de machine learning
 - exploitation des données pour le produit
+- coordination des flux inter-systèmes
+- synchronisation des schémas et formats exposés
 
 ---
 

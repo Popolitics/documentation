@@ -12,7 +12,8 @@ Ce document décrit les règles et outils de communication de l'équipe POPoliti
 |---|---|---|
 | **Samy** | Chef de projet / Product Owner / UX-UI | Animation des cérémonies Scrum, point de contact principal avec l'école |
 | **Jaures** | Tech Lead | Coordination technique inter-pôles, arbitrage des décisions d'architecture |
-| **Arthur** | Développeur Backend | Communication pôle Backend |
+| **Samuel** | Développeur Backend | Communication pôle Backend |
+| **Arthur** | Data Integration Engineer | Communication Backend ↔ Data |
 | **Evilavy** | Frontend / UX-UI | Communication pôle Frontend |
 | **Raphaël** | Frontend / UX-UI | Communication pôle Frontend |
 | **Mehdi** | Data Engineer | Communication pôle Data |
