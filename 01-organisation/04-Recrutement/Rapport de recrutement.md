@@ -237,3 +237,92 @@ Les candidats suivants n’ont pas été retenus dans la composition finale de l
 - Alexandre Benoist  
 
 Bien que leurs profils soient intéressants, la sélection finale a privilégié **la cohérence globale de l’équipe, la complémentarité des compétences et l’engagement dans le projet**.
+
+---
+
+# Rapport de second recrutement – Projet POPolitics
+
+
+## 1. Contexte du recrutement
+
+Dans le cadre de l’évolution du projet **POPolitics**, une seconde phase de recrutement a été organisée afin de renforcer l’équipe existante et répondre à l’évolution des besoins techniques.
+
+L’objectif principal était d’intégrer un profil orienté **Backend** afin d’augmenter la capacité de développement, renforcer la couche applicative et améliorer les interactions avec les différents services du projet.
+
+Le processus de recrutement visait également à identifier un profil capable de s’intégrer efficacement à l’équipe, avec un équilibre entre **compétences techniques, motivation et capacité de collaboration**.
+
+La même méthodologie de recrutement a été appliqué que précédemment.
+
+
+##  Analyse des candidatures
+
+
+## Samuel
+
+- Orientation : Backend  
+- Intérêt pour le projet : +++++    
+- Niveau technique : ++++  
+- plutôt JS  
+- Sécurité et gestion de version : +++  
+- Travail en équipe : ++++  
+- Motivation : ++++
+
+Samuel présente un **profil technique très intéressant côté backend**, avec une forte motivation pour le projet.
+
+
+## 5. Composition finale de l'équipe
+
+Suite à l’analyse des candidatures, l’équipe suivante a été retenue.
+
+## Direction technique
+
+### Tech Lead
+
+- Jaures
+
+---
+
+## Développement
+
+### Frontend
+
+- Evilavy  
+- Raphaël
+
+### Backend
+
+- Samuel
+
+---
+
+## Infrastructure
+
+### DevOps
+
+- Lazare
+
+---
+
+## Pilotage produit
+
+### Chef de projet / Product Owner
+
+- Samy
+
+---
+
+## Data
+
+### Integration/API
+
+- Arthur
+
+### IA
+
+- Chloé
+
+### ETL / Data Engineering
+
+- Mehdi
+
+---

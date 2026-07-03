@@ -20,6 +20,7 @@ L’objectif est de montrer **qui est responsable de quoi** pour chaque grande b
 6. Frontend Next.js (Portail collectif & Page personnelle)
 7. DevOps & Orchestration (Kestra, déploiements)
 8. Qualité, Tests & Sécurité
+9. Intégration Plateforme Data
 
 ---
 
@@ -33,10 +34,11 @@ L’objectif est de montrer **qui est responsable de quoi** pour chaque grande b
 | 2. Plateforme Data & ETL                         | Mehdi                       | Chloé (IA), Lazare (DevOps)                                     |
 | 3. Datamarts & Analytique                        | Mehdi                       | Arthur (consommation via APIs), Chloé (besoins analytiques)     |
 | 4. Couche IA & Modèles                           | Chloé                       | Mehdi (données), Arthur (intégration via IA Service)            |
-| 5. Backend Django (Data / IA / Auth Services)    | Arthur                      | Jaures (support tech), Lazare (déploiement), Chloé (IA)         |
-| 6. Frontend Next.js (Portail & Page personnelle) | Evilavy & Raphaël          | Samy (UX/UI), Arthur (contrats d’API)                           |
-| 7. DevOps & Orchestration (Kestra, déploiements) | Lazare                      | Mehdi (workflows data), Arthur (services backend)               |
+| 5. Backend Django (Data / IA / Auth Services)    | Samuel                      | Arthur (intégration Data), Jaures (support tech), Lazare (déploiement), Chloé (IA) |
+| 6. Frontend Next.js (Portail & Page personnelle) | Evilavy & Raphaël          | Samy (UX/UI), Arthur (intégration Data et contrats d’API internes) |
+| 7. DevOps & Orchestration (Kestra, déploiements) | Lazare                      | Mehdi (workflows data), Arthur (intégration Data)               |
 | 8. Qualité, Tests & Sécurité                     | Samy & Jaures              | Tous les membres selon leur périmètre                           |
+| 9. Intégration Plateforme Data                   | Arthur                      | Samuel (backend), Mehdi (ETL), Chloé (IA), Jaures (support)     |
 
 <!-- markdownlint-enable MD060 -->
 
@@ -59,10 +61,11 @@ L’objectif est de montrer **qui est responsable de quoi** pour chaque grande b
 
 - **Tâches principales** :
   - Exposition des datamarts PostgreSQL via des APIs REST.
-  - Gestion des contrats d’API avec le frontend.
+  - Gestion des contrats d’API internes avec le frontend, les services IA et les socles Data.
   - Gestion des erreurs et des performances côté backend.
-- **Responsable** : Arthur.
+- **Responsable** : Samuel.
 - **Contributeurs** :
+  - Arthur (intégration Data),
   - Mehdi (schémas des datamarts),
   - Evilavy & Raphaël (besoins côté UI),
   - Lazare (déploiement).
@@ -76,6 +79,21 @@ L’objectif est de montrer **qui est responsable de quoi** pour chaque grande b
 - **Responsables** : Evilavy & Raphaël.
 - **Contributeurs** :
   - Samy (priorisation fonctionnelle, UX),
-  - Arthur (contrats d’API et endpoints).
+  - Arthur (intégration Data et contrats d’API internes).
+
+### 3.4 Lot WBS : Intégration Plateforme Data
+
+- **Tâches principales** :
+  - Gestion des échanges Backend ↔ Datamarts.
+  - Contrats API internes.
+  - Coordination Backend ↔ ETL ↔ IA.
+  - Documentation des flux.
+  - Gestion des dépendances techniques.
+- **Responsable** : Arthur.
+- **Contributeurs** :
+  - Samuel (backend),
+  - Mehdi (ETL),
+  - Chloé (IA),
+  - Jaures (support technique).
 
 Ce document peut être complété avec d’autres lots WBS détaillés, de façon similaire, si nécessaire.

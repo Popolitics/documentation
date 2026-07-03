@@ -166,7 +166,8 @@ Un PR ne peut pas être mergé si l'un de ces steps échoue.
 
 | Pôle | Responsable des tests | Type de tests |
 |---|---|---|
-| Backend | Arthur (+ relecture Jaures) | Unitaires + intégration |
+| Backend | Samuel (+ relecture Jaures) | Unitaires + intégration |
+| Intégration Data | Arthur | Tests de contrats d’API internes + flux inter-systèmes |
 | ETL / Data | Mehdi | Unitaires + data quality |
 | IA | Chloé | Unitaires sur les pipelines de traitement |
 | Frontend | Evilavy + Raphaël | Unitaires + intégration + E2E manuels |
