@@ -34,13 +34,13 @@ Ce document présente, de manière synthétique, les principales **options techn
 
 | Option                                   | Avantages principaux                                                                                                                 | Limites / remarques                                                                                                      | Choix retenu                                                              |
 |------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| **Backend Python (Django)**              | Aligné avec l'écosystème data/IA (ETL en Python, socle IA exposé en FastAPI), forte cohérence technique, mutualisation des compétences | Moins homogène avec le frontend JavaScript, nécessité de maîtriser deux langages sur le projet                           | **Oui** – meilleure intégration avec ETL & IA, moins de friction technique globale |
-| Backend JavaScript (Node.js, Express/Nest) | Homogénéité full‑JS (front + back), grande communauté, écosystème riche de packages                                                 | Moins naturel pour interfacer directement les pipelines ETL Python et les modèles IA Python ; nécessite plus de "colle" entre mondes JS et Python | Non, écarté pour éviter la complexité d'un pont JS ↔ Python permanent    |
+| **Backend Python (Django)**              | Aligné avec l’écosystème data/IA (ETL en Python, socle IA exposé en Django également, cohérent avec Data Service et Auth Service), forte cohérence technique, mutualisation des compétences | Moins homogène avec le frontend JavaScript, nécessité de maîtriser deux langages sur le projet                           | **Oui** – meilleure intégration avec ETL & IA, moins de friction technique globale |
+| Backend JavaScript (Node.js, Express/Nest) | Homogénéité full‑JS (front + back), grande communauté, écosystème riche de packages                                                 | Moins naturel pour interfacer directement les pipelines ETL Python et les modèles IA Python ; nécessite plus de “colle” entre mondes JS et Python | Non, écarté pour éviter la complexité d’un pont JS ↔ Python permanent    |
 
 **Conclusion :** un **backend Python** est privilégié pour rester cohérent avec :
 - la plateforme data et les pipelines ETL majoritairement en Python ;
-- le socle IA également en Python (FastAPI) ;
-ce qui simplifie les échanges entre services et réduit les risques d'incompréhension technique au sein de l'équipe.
+- le socle IA également en Python, exposé en Django comme les autres services (Data, Auth) ;
+ce qui simplifie les échanges entre services et réduit les risques d’incompréhension technique au sein de l’équipe.
 
 ---
 
