@@ -77,12 +77,20 @@ ce qui simplifie les échanges entre services et réduit les risques d’incompr
 
 ### 4.2 Exposition du service IA
 
+Dans tous les cas, l'IA Service reste un **service dédié et découplé**, cohérent
+avec l'architecture multi-services décrite dans 01-technological-choices.md —
+la question ici porte uniquement sur le **framework** de ce service, pas sur
+son découplage (déjà acté).
+
 | Option                          | Avantages principaux                                                                                    | Limites / remarques                                                                        | Choix retenu                                                                      |
 |---------------------------------|---------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| **FastAPI (IA Service dédié)**  | Léger, asynchrone, typage moderne, découplage propre entre IA Service et backend Django                 | Service supplémentaire à maintenir, géré via Docker Compose                                | **Oui** – conforme à l'architecture multi‑services décrite dans 01-technological-choices.md |
-| IA embarquée dans Django        | Moins de services à orchestrer                                                                          | Couplage fort entre logique IA et logique métier, contredit l'architecture multi‑services  | Non, écarté pour préserver la séparation des responsabilités                      |
+| **Django (IA Service dédié)**   | Même framework que Data Service et Auth Service, mutualisation des compétences et de l'outillage (ORM, hooks, CI), un seul écosystème Python à maintenir sur les 3 services backend | Plus « lourd » que FastAPI pour un service qui ne fait principalement que de l'inférence   | **Oui** – cohérence avec Data Service et Auth Service, déjà en Django             |
+| FastAPI (IA Service dédié)      | Léger, asynchrone, typage moderne                                                                        | Introduit un deuxième framework backend à maintenir en parallèle de Django (Data, Auth)    | Non, écarté pour éviter de fragmenter l'écosystème backend                        |
 
-**Conclusion :** FastAPI est retenu comme **IA Service dédié**, exposé via une API REST au backend Django. Ce choix acte formellement le découplage décrit dans 01-technological-choices.md (sections 8.3 et 9.1), et lève l'ambiguïté laissée dans ce document quant à la technologie d'exposition des modèles IA.
+**Conclusion :** Django est retenu comme framework de l'**IA Service dédié**,
+par cohérence avec Data Service et Auth Service — les trois services backend
+partagent le même framework, ce qui simplifie l'outillage commun (ORM,
+authentification JWT, hooks, CI) sans remettre en cause leur découplage.
 
 ---
 
@@ -91,6 +99,6 @@ ce qui simplifie les échanges entre services et réduit les risques d’incompr
 - **ETL & Data** : **Kestra** pour l'orchestration des pipelines vers le Data Lake (Bronze / Silver / Gold) et les datamarts PostgreSQL, garantissant traçabilité et reproductibilité des traitements.
 - **Backend** : **Django / Python** comme framework complet pour les services Data, IA et Auth, fortement aligné avec les pipelines ETL et les modèles IA développés en Python.
 - **Frontend** : **Next.js** pour un frontend moderne, performant et sécurisé (BFF + SSR/SSG) offrant une expérience claire et accessible aux utilisateurs finaux.
-- **IA & NLP** : **HuggingFace Transformers** pour la modélisation NLP locale (CamemBERT, Mistral), exposé via un **FastAPI IA Service** dédié consommé par le backend Django.
+- **IA & NLP** : **HuggingFace Transformers** pour la modélisation NLP locale (CamemBERT, Mistral), exposé via un **IA Service** dédié en Django, cohérent avec Data Service et Auth Service.
 
 Ces choix prolongent les principes exposés dans 01-technological-choices.md : **séparation claire des responsabilités**, scalabilité progressive (MVP local → cloud), et alignement avec les bonnes pratiques de data engineering et de développement web modernes.
