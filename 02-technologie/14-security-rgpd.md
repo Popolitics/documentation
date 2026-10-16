@@ -117,7 +117,7 @@ Les utilisateurs inscrits disposent des droits suivants, à exercer via l'interf
 
 | Donnée | Finalité | Durée de conservation |
 |---|---|---|
-| Email | Authentification, notifications | Durée du compte + 30 jours après suppression |
+| Email | Authentification, notifications | Durée du compte |
 | Mot de passe hashé | Authentification | Durée du compte |
 | Élus suivis | Personnalisation | Durée du compte |
 | Thèmes d'intérêt | Personnalisation | Durée du compte |
